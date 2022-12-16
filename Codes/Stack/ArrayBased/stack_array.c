@@ -42,13 +42,13 @@ StackEntry Peek(Stack *s){
 
 void CopyStack(Stack *s1,Stack *s2)
 {
-    for(int i=0;i<MAX;i++){
+    for(int i=0;i<s1->top;i++){
         s2->entry[s2->top++]=s1->entry[i];
     }
 }
 
 void TraverseStack(Stack *s,void(*pf)(StackEntry)){
-    for(int i=0;i<StackSize(s);i++){
+    for(int i=0;i<s->top;i++){
         (*pf)(s->entry[i]);
     }
 }
